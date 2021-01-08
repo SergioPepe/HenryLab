@@ -1,0 +1,9 @@
+.s{
+    display: grid;
+    margin: 0px 800px 0px 800px;
+}
+.inp {
+    text-align: center;
+    margin-top: 1rem;
+    border-radius: 5%;
+}
