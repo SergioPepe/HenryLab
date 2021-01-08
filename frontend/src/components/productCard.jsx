@@ -62,11 +62,11 @@ export default function Product(props) {
             />
             <h1 className="h1">{p.title}</h1>
             <div>
-              <div >
+              <div className="text">
                 Precio: {p.price} {p.currency_id}
               </div>
-              <div>Condicion: {p.condition}</div>
-              <div>Stock: {p.available_quantity}</div>
+              <div className="text">Condicion: {p.condition}</div>
+              <div className="text">Stock: {p.available_quantity}</div>
             </div>
           </div>
         ))}
