@@ -3,19 +3,19 @@ import style from "../CSS/productCard.css"
 
 export default function Product(props) {
   const [info, setInfo] = useState([]);
-  const [position, setPosition] = useState({ by: "", order: "asc" });
+  const [position, setPosition] = useState({ e: "", order: "asc" });
 
   useEffect(() => setInfo(props.producto), [props.producto]);
 
   const post = useMemo(() => {
     const arr = [...info];
 
-    if (position.by) {
+    if (position.e) {
       return arr?.sort((a, b) => {
         if (position.order === "asc") {
-          return a[position.by] > b[position.by] ? 1 : -1;
+          return a[position.e] > b[position.e] ? 1 : -1;
         }
-        return a[position.by] < b[position.by] ? 1 : -1;
+        return a[position.e] < b[position.e] ? 1 : -1;
       });
     }
     return arr;
@@ -25,17 +25,17 @@ export default function Product(props) {
 
   const positionAsc = (e) => {
     e.preventDefault();
-    setPosition({ by: "price", order: "asc" });
+    setPosition({ e: "price", order: "asc" });
   };
 
   const positionDesc = (e) => {
     e.preventDefault();
-    setPosition({ by: "price", order: "desc" });
+    setPosition({ e: "price", order: "desc" });
   };
 
   return (
     <div className="container">
-      <h1 className="tlt">Precio</h1>
+      <h1 className="tlt">Orden</h1>
       <div className="div">
         <button
           className="btn"
